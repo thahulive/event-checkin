@@ -1,0 +1,14 @@
+html{
+	background-color: #F5F5F5;
+}
+#first-container{
+	margin-top:100px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+#logo{
+	margin-top: -50px;
+}
+#second-container{
+	margin-bottom: 50px;
+}
