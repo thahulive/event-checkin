@@ -12,3 +12,14 @@ html{
 #second-container{
 	margin-bottom: 50px;
 }
+#first-container-normal{
+	margin-top:20px;
+	text-align: center;
+
+}
+.container{
+	padding-bottom: 30px;
+}
+tfoot {
+    display: table-header-group;
+}
