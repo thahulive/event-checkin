@@ -50,15 +50,29 @@ BODY, TD {
 <body>
 <h2> Confirmed Participant List</h2>
 <form id="form1" name="form1" method="post" action="search.php">
-<label for="name">Name</label>
-<input name="name" type="text" id="name" size="15" value="<?php echo $_REQUEST['name']; ?>" />
+  <label for="name">Name</label>
+  <input name="name" type="text" id="name" size="15" value="<?php echo $_REQUEST['name']; ?>" />
 
-<input type="submit" name="button" id="button" value="Find" />
-  </label>
-  <a href="search.php"> 
-  reset</a>
+  <input type="submit" name="button" id="button" value="Find" />
+  <a href="search.php"> reset</a>
 </form>
 <br /><br />
+
+<form id="form1" name="form1" method="post" action="search.php">
+  <label for="college">College</label>
+  <select name="college">
+    <option>--Select--</option>
+    <option>Bangalore</option>
+    <option>Kolkata</option>
+    <option>Madras</option>
+    <option>Sri Lanka</option>
+    <option>Pune</option>
+  </select>
+  <input type="submit" name="button" id="button" value="Find" />
+  <a href="search.php"> reset</a>
+</form>
+<br><br>
+
 <table width="700" border="1" cellspacing="0" cellpadding="4">
   <tr>
     <td width="90" bgcolor="#CCCCCC"><strong>Name</strong></td>
@@ -70,6 +84,11 @@ BODY, TD {
 <?php
 if ($_REQUEST["name"]<>'') {
 	$search_string = " AND name LIKE '%".$_REQUEST['name']."%'";	
+$sql = "SELECT * FROM " . $SETTINGS['data_table'] . " WHERE slno>0 AND status='confirmed'" . $search_string;
+
+}
+elseif ($_REQUEST["college"]<>'') {
+  $search_string = " AND college LIKE '%".$_REQUEST['college']."%'";  
 $sql = "SELECT * FROM " . $SETTINGS['data_table'] . " WHERE slno>0 AND status='confirmed'" . $search_string;
 
 }
