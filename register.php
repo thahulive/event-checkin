@@ -1,35 +1,3 @@
-<h2>Register New Participant</h2>
-<a href="search.php">Check In</a>
-<br>
-<a href="checkedlist.php">Checked In List</a>
-<br>
-<a href="index.html">Home</a>
-<br><br>
-
-<form action="register.php" method="post">
-	<label for="name">Name</label>
-	<input type="text" name="name">
-	<br><br>
-	<label for="mobile">Mobile</label>
-	<input type="text" name="contact">
-	<br><br>
-	<label for="email">Email</label>
-	<input type="email" name="email">
-	<br><br>
-	<label for="college">College</label>
-	<select name="college">
-		<option>Kolkata</option>
-		<option>Bangalore</option>
-		<option>Pune</option>
-		<option>Other</option>
-	</select>
-	<br><br>
-	<label for="status">Check In</label>
-	<input type="checkbox" name="status" checked="true">
-	<br><br>
-	<input type="submit" name="submit">
-</form>
-
 <?php
 error_reporting(0);
 include("config.php");
@@ -43,3 +11,104 @@ if (isset($_POST["submit"])) {
 	mysqli_query($connection,$sql) or die ('request "Could not execute SQL query" '.$sql);
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>IEDC Summit 2017 - Registration</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+    BODY, TD {
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="row" id="first-container-normal">
+      <div class="col">
+          <br><br><br>
+          <h3>Register New Participant</h3>
+          <br><br>
+      </div>
+    </div>
+
+    <div class="row" id="second-container">
+      <div class="col">
+        <a href="index.html" class="btn btn-light btn-block">Home</a>
+      </div>
+      <div class="col">
+        <a href="search.php" class="btn btn-light btn-block">Check In</a>
+      </div>
+      <div class="col">
+        <a href="checkedlist.php" class="btn btn-light btn-block">Checked In Lis</a>
+      </div>
+    </div>
+    <hr>
+
+    <form action="register.php" method="post">
+	    <div class="form-group row">
+	      <label for="name" class="col-sm-2 col-form-label">Name</label>
+	      <div class="col-sm-10">
+	        <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+	      </div>
+	    </div>
+	    <div class="form-group row">
+	      <label for="email" class="col-sm-2 col-form-label">Email</label>
+	      <div class="col-sm-10">
+	        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+	      </div>
+	    </div>
+	    <div class="form-group row">
+	      <label for="contact" class="col-sm-2 col-form-label">Contact</label>
+	      <div class="col-sm-10">
+	        <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact">
+	      </div>
+	    </div>	    
+	    <div class="form-group row">
+	      <label for="college" class="col-sm-2 col-form-label">College</label>
+	      <div class="col-sm-10">
+	      	<select name="college" class="form-control" id="college">
+	      		<option>Bangalore</option>
+	      		<option>Kerala</option>
+	      	</select>
+	      </div>
+	    </div>
+
+	    <div class="form-group row">
+	      <div class="col-sm-2">Check In</div>
+	      <div class="col-sm-10">
+	        <div class="form-check">
+	          <label class="form-check-label">
+	            <input class="form-check-input" name="status" checked="true" type="checkbox"> Check In
+	          </label>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="form-group row">
+	      <div class="col-sm-10">
+	        <button type="submit" name="submit" class="btn btn-primary">Register</button>
+	      </div>
+	    </div>
+  </form>
+
+    
+
+  </div>
+
+<!-- Script starts -->
+<!-- <script src="js/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Script ends -->
+
+</body>
+</html>
